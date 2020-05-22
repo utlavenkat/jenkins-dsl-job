@@ -1,0 +1,16 @@
+job('my-second-dsl-job') {
+  description('My second dsl job')
+  scm {
+	git('https://github.com/jenkins-docs/simple-java-maven-app', 'master')
+  }
+   steps {
+     maven{
+       mavenInstallation('maven')
+       goals('clean package')
+     }
+    }
+    publishers {
+        archiveArtifacts('target/*.jar')
+        archiveJunit('target/surefire-reports/*.xml')
+    }
+}
