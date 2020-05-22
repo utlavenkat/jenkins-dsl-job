@@ -1,5 +1,5 @@
 job('my-second-dsl-job') {
-  description('My second dsl job')
+  description('My test dsl job')
   scm {
 	git('https://github.com/jenkins-docs/simple-java-maven-app', 'master')
   }
